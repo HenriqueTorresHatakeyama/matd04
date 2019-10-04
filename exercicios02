@@ -1,0 +1,16 @@
+#include <stdio.h>
+struct node{
+    int data;
+    struct node* next;
+};
+int size(struct node* s){
+    return s;
+}
+
+int main(){
+    struct node* head;
+    head = 10;
+    printf("%d", size(head));
+
+    return 0;
+}
