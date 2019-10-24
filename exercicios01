@@ -12,10 +12,3 @@ int isEmpty(struct node* r){
     return 1;
   }
 }
-
-int main() {
-  struct node* head;
-  head->data = 5;
-  printf("%d", isEmpty(head));
-  return 0;
-}
