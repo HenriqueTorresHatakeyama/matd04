@@ -1,14 +1,42 @@
 #include <stdio.h>
+
 struct node{
   int data;
   struct node* next;
 };
-
 int isEmpty(struct node* r){
   if(r != NULL){
     return 0;
   }
   else{
     return 1;
+  }
+}
+int size(struct node* r){
+  int i;
+  for (i=0;r!=NULL;i++){
+    r = r->next;
+  }
+  return i;
+}
+void insert(struct node* headRef, int newdata){
+  struct node* newnode = (struct node*) malloc(sizeof(struct node));
+  struct node* last = headRef;
+  newnode->data = newdata;
+  newnode->next = NULL;
+  if (headRef==NULL){
+    headRef = newnode;
+    return;
+  }
+  while (last->next != NULL){
+    last = last->next;
+  }
+  last->next = newnode;
+  return;
+}
+void printList(struct node* r){
+  while (r != NULL){
+    printf("%d\n", r->data);
+    r = r->next;
   }
 }
